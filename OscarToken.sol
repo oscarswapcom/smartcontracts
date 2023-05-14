@@ -3,9 +3,9 @@
 pragma solidity 0.6.12;
 
 
-// 
+//
 /**
- * @dev Wrappers over Solidity's arithmetic operations with added overflow
+ * @dev Wrappers over Solidity"s arithmetic operations with added overflow
  * checks.
  *
  * Arithmetic operations in Solidity wrap on overflow. This can easily result
@@ -15,14 +15,14 @@ pragma solidity 0.6.12;
  * operation overflows.
  *
  * Using this library instead of the unchecked operations eliminates an entire
- * class of bugs, so it's recommended to use it always.
+ * class of bugs, so it"s recommended to use it always.
  */
 library SafeMath {
     /**
      * @dev Returns the addition of two unsigned integers, reverting on
      * overflow.
      *
-     * Counterpart to Solidity's `+` operator.
+     * Counterpart to Solidity"s `+` operator.
      *
      * Requirements:
      *
@@ -30,7 +30,7 @@ library SafeMath {
      */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        require(c >= a, 'SafeMath: addition overflow');
+        require(c >= a, "SafeMath: addition overflow");
 
         return c;
     }
@@ -39,21 +39,21 @@ library SafeMath {
      * @dev Returns the subtraction of two unsigned integers, reverting on
      * overflow (when the result is negative).
      *
-     * Counterpart to Solidity's `-` operator.
+     * Counterpart to Solidity"s `-` operator.
      *
      * Requirements:
      *
      * - Subtraction cannot overflow.
      */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        return sub(a, b, 'SafeMath: subtraction overflow');
+        return sub(a, b, "SafeMath: subtraction overflow");
     }
 
     /**
      * @dev Returns the subtraction of two unsigned integers, reverting with custom message on
      * overflow (when the result is negative).
      *
-     * Counterpart to Solidity's `-` operator.
+     * Counterpart to Solidity"s `-` operator.
      *
      * Requirements:
      *
@@ -74,22 +74,22 @@ library SafeMath {
      * @dev Returns the multiplication of two unsigned integers, reverting on
      * overflow.
      *
-     * Counterpart to Solidity's `*` operator.
+     * Counterpart to Solidity"s `*` operator.
      *
      * Requirements:
      *
      * - Multiplication cannot overflow.
      */
     function mul(uint256 a, uint256 b) internal pure returns (uint256) {
-        // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
-        // benefit is lost if 'b' is also tested.
+        // Gas optimization: this is cheaper than requiring "a" not being zero, but the
+        // benefit is lost if "b" is also tested.
         // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522
         if (a == 0) {
             return 0;
         }
 
         uint256 c = a * b;
-        require(c / a == b, 'SafeMath: multiplication overflow');
+        require(c / a == b, "SafeMath: multiplication overflow");
 
         return c;
     }
@@ -98,7 +98,7 @@ library SafeMath {
      * @dev Returns the integer division of two unsigned integers. Reverts on
      * division by zero. The result is rounded towards zero.
      *
-     * Counterpart to Solidity's `/` operator. Note: this function uses a
+     * Counterpart to Solidity"s `/` operator. Note: this function uses a
      * `revert` opcode (which leaves remaining gas untouched) while Solidity
      * uses an invalid opcode to revert (consuming all remaining gas).
      *
@@ -107,14 +107,14 @@ library SafeMath {
      * - The divisor cannot be zero.
      */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        return div(a, b, 'SafeMath: division by zero');
+        return div(a, b, "SafeMath: division by zero");
     }
 
     /**
      * @dev Returns the integer division of two unsigned integers. Reverts with custom message on
      * division by zero. The result is rounded towards zero.
      *
-     * Counterpart to Solidity's `/` operator. Note: this function uses a
+     * Counterpart to Solidity"s `/` operator. Note: this function uses a
      * `revert` opcode (which leaves remaining gas untouched) while Solidity
      * uses an invalid opcode to revert (consuming all remaining gas).
      *
@@ -129,7 +129,7 @@ library SafeMath {
     ) internal pure returns (uint256) {
         require(b > 0, errorMessage);
         uint256 c = a / b;
-        // assert(a == b * c + a % b); // There is no case in which this doesn't hold
+        // assert(a == b * c + a % b); // There is no case in which this doesn"t hold
 
         return c;
     }
@@ -138,7 +138,7 @@ library SafeMath {
      * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
      * Reverts when dividing by zero.
      *
-     * Counterpart to Solidity's `%` operator. This function uses a `revert`
+     * Counterpart to Solidity"s `%` operator. This function uses a `revert`
      * opcode (which leaves remaining gas untouched) while Solidity uses an
      * invalid opcode to revert (consuming all remaining gas).
      *
@@ -147,14 +147,14 @@ library SafeMath {
      * - The divisor cannot be zero.
      */
     function mod(uint256 a, uint256 b) internal pure returns (uint256) {
-        return mod(a, b, 'SafeMath: modulo by zero');
+        return mod(a, b, "SafeMath: modulo by zero");
     }
 
     /**
      * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
      * Reverts with custom message when dividing by zero.
      *
-     * Counterpart to Solidity's `%` operator. This function uses a `revert`
+     * Counterpart to Solidity"s `%` operator. This function uses a `revert`
      * opcode (which leaves remaining gas untouched) while Solidity uses an
      * invalid opcode to revert (consuming all remaining gas).
      *
@@ -190,7 +190,7 @@ library SafeMath {
     }
 }
 
-// 
+//
 interface IBEP20 {
     /**
      * @dev Returns the amount of tokens in existence.
@@ -223,7 +223,7 @@ interface IBEP20 {
     function balanceOf(address account) external view returns (uint256);
 
     /**
-     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     * @dev Moves `amount` tokens from the caller"s account to `recipient`.
      *
      * Returns a boolean value indicating whether the operation succeeded.
      *
@@ -241,14 +241,14 @@ interface IBEP20 {
     function allowance(address _owner, address spender) external view returns (uint256);
 
     /**
-     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
+     * @dev Sets `amount` as the allowance of `spender` over the caller"s tokens.
      *
      * Returns a boolean value indicating whether the operation succeeded.
      *
      * IMPORTANT: Beware that changing an allowance with this method brings the risk
      * that someone may use both the old and the new allowance by unfortunate
      * transaction ordering. One possible solution to mitigate this race
-     * condition is to first reduce the spender's allowance to 0 and set the
+     * condition is to first reduce the spender"s allowance to 0 and set the
      * desired value afterwards:
      * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
      *
@@ -258,7 +258,7 @@ interface IBEP20 {
 
     /**
      * @dev Moves `amount` tokens from `sender` to `recipient` using the
-     * allowance mechanism. `amount` is then deducted from the caller's
+     * allowance mechanism. `amount` is then deducted from the caller"s
      * allowance.
      *
      * Returns a boolean value indicating whether the operation succeeded.
@@ -286,7 +286,7 @@ interface IBEP20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-// 
+//
 /**
  * @dev Collection of functions related to the address type
  */
@@ -311,7 +311,7 @@ library Address {
     function isContract(address account) internal view returns (bool) {
         // According to EIP-1052, 0x0 is the value returned for not-yet created accounts
         // and 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470 is returned
-        // for accounts without code, i.e. `keccak256('')`
+        // for accounts without code, i.e. `keccak256("")`
         bytes32 codehash;
         bytes32 accountHash = 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470;
         // solhint-disable-next-line no-inline-assembly
@@ -322,7 +322,7 @@ library Address {
     }
 
     /**
-     * @dev Replacement for Solidity's `transfer`: sends `amount` wei to
+     * @dev Replacement for Solidity"s `transfer`: sends `amount` wei to
      * `recipient`, forwarding all available gas and reverting on errors.
      *
      * https://eips.ethereum.org/EIPS/eip-1884[EIP1884] increases the gas cost
@@ -338,11 +338,11 @@ library Address {
      * https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].
      */
     function sendValue(address payable recipient, uint256 amount) internal {
-        require(address(this).balance >= amount, 'Address: insufficient balance');
+        require(address(this).balance >= amount, "Address: insufficient balance");
 
         // solhint-disable-next-line avoid-low-level-calls, avoid-call-value
-        (bool success, ) = recipient.call{value: amount}('');
-        require(success, 'Address: unable to send value, recipient may have reverted');
+        (bool success, ) = recipient.call{value: amount}("");
+        require(success, "Address: unable to send value, recipient may have reverted");
     }
 
     /**
@@ -364,7 +364,7 @@ library Address {
      * _Available since v3.1._
      */
     function functionCall(address target, bytes memory data) internal returns (bytes memory) {
-        return functionCall(target, data, 'Address: low-level call failed');
+        return functionCall(target, data, "Address: low-level call failed");
     }
 
     /**
@@ -397,7 +397,7 @@ library Address {
         bytes memory data,
         uint256 value
     ) internal returns (bytes memory) {
-        return functionCallWithValue(target, data, value, 'Address: low-level call with value failed');
+        return functionCallWithValue(target, data, value, "Address: low-level call with value failed");
     }
 
     /**
@@ -412,7 +412,7 @@ library Address {
         uint256 value,
         string memory errorMessage
     ) internal returns (bytes memory) {
-        require(address(this).balance >= value, 'Address: insufficient balance for call');
+        require(address(this).balance >= value, "Address: insufficient balance for call");
         return _functionCallWithValue(target, data, value, errorMessage);
     }
 
@@ -422,7 +422,7 @@ library Address {
         uint256 weiValue,
         string memory errorMessage
     ) private returns (bytes memory) {
-        require(isContract(target), 'Address: call to non-contract');
+        require(isContract(target), "Address: call to non-contract");
 
         // solhint-disable-next-line avoid-low-level-calls
         (bool success, bytes memory returndata) = target.call{value: weiValue}(data);
@@ -445,7 +445,7 @@ library Address {
     }
 }
 
-// 
+//
 /**
  * @title SafeBEP20
  * @dev Wrappers around BEP20 operations that throw on failure (when the token
@@ -490,11 +490,11 @@ library SafeBEP20 {
     ) internal {
         // safeApprove should only be called when setting an initial allowance,
         // or when resetting it to zero. To increase and decrease it, use
-        // 'safeIncreaseAllowance' and 'safeDecreaseAllowance'
+        // "safeIncreaseAllowance" and "safeDecreaseAllowance"
         // solhint-disable-next-line max-line-length
         require(
             (value == 0) || (token.allowance(address(this), spender) == 0),
-            'SafeBEP20: approve from non-zero to non-zero allowance'
+            "SafeBEP20: approve from non-zero to non-zero allowance"
         );
         _callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, value));
     }
@@ -515,7 +515,7 @@ library SafeBEP20 {
     ) internal {
         uint256 newAllowance = token.allowance(address(this), spender).sub(
             value,
-            'SafeBEP20: decreased allowance below zero'
+            "SafeBEP20: decreased allowance below zero"
         );
         _callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, newAllowance));
     }
@@ -527,20 +527,20 @@ library SafeBEP20 {
      * @param data The call data (encoded using abi.encode or one of its variants).
      */
     function _callOptionalReturn(IBEP20 token, bytes memory data) private {
-        // We need to perform a low level call here, to bypass Solidity's return data size checking mechanism, since
-        // we're implementing it ourselves. We use {Address.functionCall} to perform this call, which verifies that
+        // We need to perform a low level call here, to bypass Solidity"s return data size checking mechanism, since
+        // we"re implementing it ourselves. We use {Address.functionCall} to perform this call, which verifies that
         // the target address contains contract code and also asserts for success in the low-level call.
 
-        bytes memory returndata = address(token).functionCall(data, 'SafeBEP20: low-level call failed');
+        bytes memory returndata = address(token).functionCall(data, "SafeBEP20: low-level call failed");
         if (returndata.length > 0) {
             // Return data is optional
             // solhint-disable-next-line max-line-length
-            require(abi.decode(returndata, (bool)), 'SafeBEP20: BEP20 operation did not succeed');
+            require(abi.decode(returndata, (bool)), "SafeBEP20: BEP20 operation did not succeed");
         }
     }
 }
 
-// 
+//
 /*
  * @dev Provides information about the current execution context, including the
  * sender of the transaction and its data. While these are generally available
@@ -566,7 +566,7 @@ contract Context {
     }
 }
 
-// 
+//
 /**
  * @dev Contract module which provides a basic access control mechanism, where
  * there is an account (an owner) that can be granted exclusive access to
@@ -604,7 +604,7 @@ contract Ownable is Context {
      * @dev Throws if called by any account other than the owner.
      */
     modifier onlyOwner() {
-        require(_owner == _msgSender(), 'Ownable: caller is not the owner');
+        require(_owner == _msgSender(), "Ownable: caller is not the owner");
         _;
     }
 
@@ -632,13 +632,13 @@ contract Ownable is Context {
      * @dev Transfers ownership of the contract to a new account (`newOwner`).
      */
     function _transferOwnership(address newOwner) internal {
-        require(newOwner != address(0), 'Ownable: new owner is the zero address');
+        require(newOwner != address(0), "Ownable: new owner is the zero address");
         emit OwnershipTransferred(_owner, newOwner);
         _owner = newOwner;
     }
 }
 
-// 
+//
 /**
  * @dev Implementation of the {IBEP20} interface.
  *
@@ -657,7 +657,7 @@ contract Ownable is Context {
  * Additionally, an {Approval} event is emitted on calls to {transferFrom}.
  * This allows applications to reconstruct the allowance for all accounts just
  * by listening to said events. Other implementations of the EIP may not emit
- * these events, as it isn't required by the specification.
+ * these events, as it isn"t required by the specification.
  *
  * Finally, the non-standard {decreaseAllowance} and {increaseAllowance}
  * functions have been added to mitigate the well-known issues around setting
@@ -775,7 +775,7 @@ contract BEP20 is Context, IBEP20, Ownable {
      * Requirements:
      * - `sender` and `recipient` cannot be the zero address.
      * - `sender` must have a balance of at least `amount`.
-     * - the caller must have allowance for `sender`'s tokens of at least
+     * - the caller must have allowance for `sender`"s tokens of at least
      * `amount`.
      */
     function transferFrom(
@@ -787,7 +787,7 @@ contract BEP20 is Context, IBEP20, Ownable {
         _approve(
             sender,
             _msgSender(),
-            _allowances[sender][_msgSender()].sub(amount, 'BEP20: transfer amount exceeds allowance')
+            _allowances[sender][_msgSender()].sub(amount, "BEP20: transfer amount exceeds allowance")
         );
         return true;
     }
@@ -827,7 +827,7 @@ contract BEP20 is Context, IBEP20, Ownable {
         _approve(
             _msgSender(),
             spender,
-            _allowances[_msgSender()][spender].sub(subtractedValue, 'BEP20: decreased allowance below zero')
+            _allowances[_msgSender()][spender].sub(subtractedValue, "BEP20: decreased allowance below zero")
         );
         return true;
     }
@@ -863,11 +863,11 @@ contract BEP20 is Context, IBEP20, Ownable {
         address sender,
         address recipient,
         uint256 amount
-    ) internal {
-        require(sender != address(0), 'BEP20: transfer from the zero address');
-        require(recipient != address(0), 'BEP20: transfer to the zero address');
+    ) internal virtual{
+        require(sender != address(0), "BEP20: transfer from the zero address");
+        require(recipient != address(0), "BEP20: transfer to the zero address");
 
-        _balances[sender] = _balances[sender].sub(amount, 'BEP20: transfer amount exceeds balance');
+        _balances[sender] = _balances[sender].sub(amount, "BEP20: transfer amount exceeds balance");
         _balances[recipient] = _balances[recipient].add(amount);
         emit Transfer(sender, recipient, amount);
     }
@@ -882,7 +882,7 @@ contract BEP20 is Context, IBEP20, Ownable {
      * - `to` cannot be the zero address.
      */
     function _mint(address account, uint256 amount) internal {
-        require(account != address(0), 'BEP20: mint to the zero address');
+        require(account != address(0), "BEP20: mint to the zero address");
 
         _totalSupply = _totalSupply.add(amount);
         _balances[account] = _balances[account].add(amount);
@@ -901,9 +901,9 @@ contract BEP20 is Context, IBEP20, Ownable {
      * - `account` must have at least `amount` tokens.
      */
     function _burn(address account, uint256 amount) internal {
-        require(account != address(0), 'BEP20: burn from the zero address');
+        require(account != address(0), "BEP20: burn from the zero address");
 
-        _balances[account] = _balances[account].sub(amount, 'BEP20: burn amount exceeds balance');
+        _balances[account] = _balances[account].sub(amount, "BEP20: burn amount exceeds balance");
         _totalSupply = _totalSupply.sub(amount);
         emit Transfer(account, address(0), amount);
     }
@@ -926,8 +926,8 @@ contract BEP20 is Context, IBEP20, Ownable {
         address spender,
         uint256 amount
     ) internal {
-        require(owner != address(0), 'BEP20: approve from the zero address');
-        require(spender != address(0), 'BEP20: approve to the zero address');
+        require(owner != address(0), "BEP20: approve from the zero address");
+        require(spender != address(0), "BEP20: approve to the zero address");
 
         _allowances[owner][spender] = amount;
         emit Approval(owner, spender, amount);
@@ -935,7 +935,7 @@ contract BEP20 is Context, IBEP20, Ownable {
 
     /**
      * @dev Destroys `amount` tokens from `account`.`amount` is then deducted
-     * from the caller's allowance.
+     * from the caller"s allowance.
      *
      * See {_burn} and {_approve}.
      */
@@ -944,13 +944,13 @@ contract BEP20 is Context, IBEP20, Ownable {
         _approve(
             account,
             _msgSender(),
-            _allowances[account][_msgSender()].sub(amount, 'BEP20: burn amount exceeds allowance')
+            _allowances[account][_msgSender()].sub(amount, "BEP20: burn amount exceeds allowance")
         );
     }
 }
 
 // OscarToken with Governance.
-contract OscarToken is BEP20('OSCAR SWAP', 'OSCAR') {
+contract OscarToken is BEP20("OSCAR SWAP", "OSCAR") {
     uint256 public constant maxSupply = 50000000 ether; //50 million
     /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterChef).
     function mintFor(address _to, uint256 _amount) public onlyOwner {
@@ -960,7 +960,18 @@ contract OscarToken is BEP20('OSCAR SWAP', 'OSCAR') {
     }
     function burn(uint256 _amount) public {
         _burn(msg.sender, _amount);
+        _moveDelegates(_delegates[msg.sender], _delegates[address(0)], _amount);
     }
+
+    function _transfer(
+        address sender,
+        address recipient,
+        uint256 amount
+    ) internal override{
+        super._transfer(sender, recipient, amount);
+        _moveDelegates(_delegates[sender], _delegates[recipient], amount);
+    }
+
     // Allows grabbing the total max supply
     function getMaxTotalSupply() public pure returns(uint256) {
         return maxSupply;
@@ -987,7 +998,7 @@ contract OscarToken is BEP20('OSCAR SWAP', 'OSCAR') {
     /// @notice The number of checkpoints for each account
     mapping (address => uint32) public numCheckpoints;
 
-    /// @notice The EIP-712 typehash for the contract's domain.
+    /// @notice The EIP-712 typehash for the contract"s domain.
     bytes32 public constant DOMAIN_TYPEHASH = keccak256("EIP712Domain(string name,uint256 chainId,address verifyingContract)");
 
     /// @notice The EIP-712 typehash for the delegation struct used by the contract
@@ -999,7 +1010,7 @@ contract OscarToken is BEP20('OSCAR SWAP', 'OSCAR') {
       /// @notice An event thats emitted when an account changes its delegate
     event DelegateChanged(address indexed delegator, address indexed fromDelegate, address indexed toDelegate);
 
-    /// @notice An event thats emitted when a delegate account's vote balance changes
+    /// @notice An event thats emitted when a delegate account"s vote balance changes
     event DelegateVotesChanged(address indexed delegate, uint previousBalance, uint newBalance);
 
     /**
